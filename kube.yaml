@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolioBackend
+  labels:
+    app: portfolioBackend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolioBackend
+  template:
+    metadata:
+      name: portfolioBackend
+      labels:
+        app: portfolioBackend
+    spec:
+      containers:
+        - name: portfolioBackend
+          image: nginx
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 50
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /usermanagement/actuator/health
+            initialDelaySeconds: 3
+            periodSeconds: 3
+      restartPolicy: Always
+      
