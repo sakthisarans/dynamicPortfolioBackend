@@ -25,14 +25,14 @@ spec:
           readinessProbe:
             tcpSocket:
               port: 8080
-            initialDelaySeconds: 50
+            initialDelaySeconds: 150
             periodSeconds: 10
             failureThreshold: 3
           livenessProbe:
             httpGet:
               port: 8080
               path: /usermanagement/actuator/health
-            initialDelaySeconds: 3
+            initialDelaySeconds: 50
             periodSeconds: 3
       restartPolicy: Always
 
