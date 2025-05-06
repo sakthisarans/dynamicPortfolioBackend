@@ -19,6 +19,10 @@ spec:
         - name: portfoliobackend
           image: sakthisaran/dynamicportfoliobackend:2.0
           imagePullPolicy: IfNotPresent
+          resources:
+          limits:
+            memory: "300Mi"
+            cpu: "300m"
           ports:
             - containerPort: 8080
               protocol: TCP
