@@ -46,7 +46,7 @@ metadata:
 spec:
   selector:
     app: portfoliobackend
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - name: portfoliobackendservice
     protocol: TCP
