@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: sakthisaran.in
+  - host: test.sakthisaran.in
     http:
       paths:
       - path: /
