@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: portfoliobackend
-          image: sakthisaran/dynamicportfoliobackend:2.0
+          image: sakthisaran/dynamicportfoliobackend:3.0
           imagePullPolicy: IfNotPresent
           resources:
           limits:
