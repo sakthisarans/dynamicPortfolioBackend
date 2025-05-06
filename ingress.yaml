@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-ingress
+  namespace: default
+spec:
+  rules:
+  - host: "*.sakthisaran.in"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: portfolioservice
+            port:
+              number: 80
+      - path: /usermanagement
+        pathType: Prefix
+        backend:
+          service:
+            name: portfoliobackendservice
+            port:
+              number: 80
