@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: portfolioBackend
+  name: portfoliobackend
   labels:
-    app: portfolioBackend
+    app: portfoliobackend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: portfolioBackend
+      app: portfoliobackend
   template:
     metadata:
-      name: portfolioBackend
+      name: portfoliobackend
       labels:
-        app: portfolioBackend
+        app: portfoliobackend
     spec:
       containers:
-        - name: portfolioBackend
-          image: nginx
+        - name: portfoliobackend
+          image: sakthisaran/dynamicportfoliobackend:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -35,4 +35,20 @@ spec:
             initialDelaySeconds: 3
             periodSeconds: 3
       restartPolicy: Always
-      
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfoliobackendservice
+  namespace: default
+spec:
+  selector:
+    app: portfoliobackend
+  type: LoadBalancer
+  ports:
+  - name: portfoliobackendservice
+    protocol: TCP
+    port: 80
+    targetPort: 8080
