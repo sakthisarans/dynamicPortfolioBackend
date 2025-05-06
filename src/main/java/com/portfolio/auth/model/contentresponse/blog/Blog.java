@@ -6,6 +6,5 @@ import java.util.List;
 
 @Data
 public class Blog {
-    private List<Post> posts;
-    private Meta meta;
+    private List<Post> post;
 }

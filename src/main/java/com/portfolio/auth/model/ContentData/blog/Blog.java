@@ -7,6 +7,5 @@ public class Blog {
     private String userName;
     private String title;
     private String token;
-    private BlogProviders providers;
     private String url;
 }

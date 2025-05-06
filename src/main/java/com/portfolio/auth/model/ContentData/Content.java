@@ -1,7 +1,7 @@
 package com.portfolio.auth.model.ContentData;
 
 import com.portfolio.auth.model.ContentData.achievements.AchievementSection;
-import com.portfolio.auth.model.ContentData.blog.Blog;
+import com.portfolio.auth.model.ContentData.blog.Blogs;
 import com.portfolio.auth.model.ContentData.education.EducationSection;
 import com.portfolio.auth.model.ContentData.projects.BigProjects;
 import com.portfolio.auth.model.ContentData.skills.WhatIDo;
@@ -33,6 +33,6 @@ public class Content {
     private ContactMe contactMe;
     private Twitter twitter;
     private PodcastSection podcast;
-    private Blog blog;
+    private Blogs blog;
     private OpenSource openSource;
 }
